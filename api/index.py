@@ -121,16 +121,16 @@ class SelectionReasons(RootModel[Dict[int, str]]):
 class KlineDataPoint(BaseModel):
     """Model for a single K-line data point."""
     date: str
-    open: float | None = None  # Allow None for robustness
-    high: float | None = None
-    low: float | None = None
-    close: float | None = None
-    volume: float | None = None
-    turn: float | None = None
-    preclose: float | None = None
-    pctChg: float | None = None
-    peTTM: float | None = None
-    pbMRQ: float | None = None
+    open: Optional[float] = None  # Allow None for robustness
+    high: Optional[float] = None
+    low: Optional[float] = None
+    close: Optional[float] = None
+    volume: Optional[float] = None
+    turn: Optional[float] = None
+    preclose: Optional[float] = None
+    pctChg: Optional[float] = None
+    peTTM: Optional[float] = None
+    pbMRQ: Optional[float] = None
 
 
 class MarkLine(BaseModel):
@@ -146,7 +146,7 @@ class StockScanResult(BaseModel):
     """Model for a stock that meets platform criteria."""
     code: str
     name: str
-    industry: str | None = "未知行业"
+    industry: Optional[str] = "未知行业"
     selection_reasons: Dict[int, str]
     kline_data: List[KlineDataPoint]
     mark_lines: Optional[List[MarkLine]] = None
