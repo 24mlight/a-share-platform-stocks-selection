@@ -6,3 +6,4 @@ pandas>=1.3.0
 pydantic>=1.10.0    # For request/response models
 python-dotenv     # Optional: For local environment variables if needed
 tqdm>=4.64.0      # For progress bars
+scipy>=1.10.1

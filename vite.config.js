@@ -10,6 +10,11 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      input: 'src/main.js' // 替换为实际入口路径
+    }
+  },
   server: {
     proxy: {
       "/api": {
